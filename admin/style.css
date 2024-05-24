@@ -1,0 +1,42 @@
+body {
+    font-style: italic;
+}
+
+.card {
+    width: 30%;
+    box-shadow: 1px 1px 10px silver;
+    padding: 10px;
+    position: absolute;
+    left: 30%;
+    top: 16%;
+}
+
+input {
+    position: relative;
+    border: 2px solid black;
+    margin-bottom: 0.5rem;
+    top: 1rem;
+    border-radius: 20px;
+    padding: 0.5rem;
+    width: 70%;
+}
+
+button {
+    background: transparent;
+    padding: 0.6rem;
+    width: 30%;
+    position: relative;
+    border-radius: 10px;
+    border: 2px solid black;
+    font-weight: bold;
+}
+
+label {
+    background: transparent;
+    padding: 0.5rem;
+    width: 30%;
+    position: relative;
+    border-radius: 10px;
+    border: 2px solid black;
+    font-weight: bold;
+}
