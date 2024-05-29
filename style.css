@@ -93,6 +93,35 @@ a:hover {
   }
 }.mainn{position:absolute; 
 }
+     .s {
+    color:  rgb(37, 172, 37); font-weight:bold; font-size:29px; font-style:'italic';
+}
+.ss{color:white;font-weight:bold; font-size:23px; font-style:'cairo'}
+.sss {
+    color:  rgb(37, 172, 37); font-weight:bold; font-size:23px; font-style:'cairo';
+}
+.cardd{float:left;box-shadow:1px 1px 10px silver; background-color:white; position:absolute;margin-bottom:2rem; border-radius:10px 10px; width:230px;margin-right:2rem;position:relative; height:310px; margin-top:3rem;}
+.cardd input{width:16%;  padding-left:5px;margin-bottom:0.5rem; border-radius:10px 10px;  position:relative; left:11rem; }
+    
+.cardd img{position:relative;width:70%; height:160px;top:1rem; }
+.cardd button{width:70%; position:relative; top:0rem; background-color:green; border-radius:10px 10px  ;}
+    h1{font-size:22px; margin-left:0.4rem; margin-top:0.9rem;}
+    .cardd p{ margin-left:0.3rem; position:relative; }
+   
+    /* Table Styles */
+.table-container {
+  width: 100%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
 .cardd h1{color:red;}
 .price{color:grey; left:6px; position:relative; margin-top:0.3rem;}
 .zz{background-color:white; padding-left:2rem;
