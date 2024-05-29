@@ -27,7 +27,7 @@ echo"
    <input class='price' name='product_price' value='$ro[email]'>
    <input class='price' name='product_price' value='$ro[password]'>
 <center>
-<p><a href='inde.php' class='link-underline-warning'>Back</a></p> </center></center>
+<p><a href='index.php' class='link-underline-warning'>Back</a></p> </center></center>
 </form>
 </div> 
 ";
