@@ -1,0 +1,63 @@
+a:hover {
+    color: red !important;
+}
+
+.mainfont {
+    font-size: 65px;
+}
+
+.redcolorbtn {
+    border-radius: 20px;
+    padding: 8px;
+    width: 150px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.redcolorbtn:hover {
+    background-color: rgb(31, 190, 31);
+    color: white;
+    border: none;
+}
+
+.main {
+    background-color: rgb(209, 201, 201);
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    padding-bottom: 20px;
+}
+
+.animated {
+    position: relative;
+    animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: 20px;
+    }
+}
+
+.card {
+    border: none;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    background-color: rgb(245, 239, 239);
+    border-radius: 20px;
+}
+
+.card:hover {
+    background-color: rgb(37, 172, 37);
+    color: white;
+}
+
+.s {
+    color: rgb(206, 195, 195);
+}
+
+h1 {
+    font-style: 'italic';
+    color: red;
+}
