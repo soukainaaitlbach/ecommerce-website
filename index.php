@@ -21,38 +21,7 @@ if(isset($_GET['logout'])){
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <style>
-      .s {
-    color:  rgb(37, 172, 37); font-weight:bold; font-size:29px; font-style:'italic';
-}
-.ss{color:white;font-weight:bold; font-size:23px; font-style:'cairo'}
-.sss {
-    color:  rgb(37, 172, 37); font-weight:bold; font-size:23px; font-style:'cairo';
-}
-.cardd{float:left;box-shadow:1px 1px 10px silver; background-color:white; position:absolute;margin-bottom:2rem; border-radius:10px 10px; width:230px;margin-right:2rem;position:relative; height:310px; margin-top:3rem;}
-.cardd input{width:16%;  padding-left:5px;margin-bottom:0.5rem; border-radius:10px 10px;  position:relative; left:11rem; }
-    
-.cardd img{position:relative;width:70%; height:160px;top:1rem; }
-.cardd button{width:70%; position:relative; top:0rem; background-color:green; border-radius:10px 10px  ;}
-    h1{font-size:22px; margin-left:0.4rem; margin-top:0.9rem;}
-    .cardd p{ margin-left:0.3rem; position:relative; }
-   
-    /* Table Styles */
-.table-container {
-  width: 100%;
-  margin: 20px auto;
-  border-collapse: collapse;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-
-.table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-    </style>
+  
   </head>
   <body>
     <div id="all">
