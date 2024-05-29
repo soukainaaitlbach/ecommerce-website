@@ -1,3 +1,23 @@
+<?php
+if(isset($_POST['update_cart'])){
+  $update_quantity = $_POST['cart_quantity'];
+  $update_id = $_POST['cart_id'];
+  mysqli_query($connect, "UPDATE `cart` SET quantity = '$update_quantity' WHERE id = '$update_id'") or die('query failed');
+  $message[] = 'Edite successfuly!';
+}
+
+if(isset($_GET['remove'])){
+  $remove_id = $_GET['remove'];
+  mysqli_query($connect, "DELETE FROM `cart` WHERE id = '$remove_id'") or die('query failed');
+  
+}
+ 
+if(isset($_GET['delete_all'])){
+  $user_id= $_SESSION['user_id'];
+  mysqli_query($connect, "DELETE FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
+  header('location:index.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,6 +78,15 @@
   }
 }
 </style>
+   <body>
+      <?php
+
+if(isset($message)){
+   foreach($message as $message){
+      echo '<div class="message" onclick="this.remove();">'.$message.'</div>';
+   }
+}
+?>
 <div class="shopping" id ="ca">
 <center>
  <h1 class="heading"> Shooping Cart</h1></center>
@@ -108,7 +137,7 @@
    <tr class="table-bottom">
       <td colspan="4">total price:</td>
       <td><?php echo $grand_total; ?>$</td>
-      <td><a href="inde.php?delete_all" onclick="return confirm('delete all products?');" class="delete-btn <?php echo ($grand_total > 1)?'':'disabled'; ?>">Clear Cart</a></td>
+      <td><a href="index.php?delete_all" onclick="return confirm('delete all products?');" class="delete-btn <?php echo ($grand_total > 1)?'':'disabled'; ?>">Clear Cart</a></td>
    </tr>
 </tbody>
 </table>
