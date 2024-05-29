@@ -131,7 +131,7 @@ $product_quantity = $_POST['product_quantity'];
 $select_cart = mysqli_query($connect, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'") ;
 if($select_cart){
 if(mysqli_num_rows($select_cart) > 0){
-   $message[] = 'alredy inthe panel';
+   $message[] = 'alredy in the panel';
   
 }else{
    mysqli_query($connect, "INSERT INTO `cart`(user_id, name, price, image, quantity) VALUES('$user_id', '$product_name', '$product_price', '$product_image', '$product_quantity')") or die('query failed');
@@ -141,26 +141,6 @@ if(mysqli_num_rows($select_cart) > 0){
  }}
 else{header('location:login.php');
 }}
-
-
-if(isset($_POST['update_cart'])){
-  $update_quantity = $_POST['cart_quantity'];
-  $update_id = $_POST['cart_id'];
-  mysqli_query($connect, "UPDATE `cart` SET quantity = '$update_quantity' WHERE id = '$update_id'") or die('query failed');
-  $message[] = 'تم تحديث كمية سلة التسوق بنجاح!';
-}
-
-if(isset($_GET['remove'])){
-  $remove_id = $_GET['remove'];
-  mysqli_query($connect, "DELETE FROM `cart` WHERE id = '$remove_id'") or die('query failed');
-  
-}
- 
-if(isset($_GET['delete_all'])){
-  $user_id= $_SESSION['user_id'];
-  mysqli_query($connect, "DELETE FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
-  header('location:inde.php');
-}
 ?>
 
 <div class="main" id="mainn">
@@ -187,69 +167,13 @@ echo"
 </div> 
 ";
   }?>
-</div></div></div></div>
-<?php
+</div></div>
 
-if(isset($message)){
-   foreach($message as $message){
-      echo '<div class="message" onclick="this.remove();">'.$message.'</div>';
-   }
-}
-?>
-<div class="shopping" id ="ca">
-<center>
- <h1 class="heading"> Shooping Cart</h1></center>
-<div class="table-container">
-  <table class="table">
-   <thead>
-      <th>Image</th>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Quantity</th>
-      <th>Total price</th>
-      <th></th>
-   </thead>
-   <tbody>
-   <?php
-     $user_id= $_SESSION['user_id'];
-      $cart_query = mysqli_query($connect, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
-      $grand_total = 0;
-      if(mysqli_num_rows($cart_query) > 0){
-         while($fetch_cart = mysqli_fetch_assoc($cart_query)){
-   ?>
-      <tr>
-         <td><img src="admin/<?php echo $fetch_cart['image']; ?>" height="75" alt=""></td>
-         <td><?php echo $fetch_cart['name']; ?></td>
-         <td><?php echo $fetch_cart['price']; ?>$ </td>
-         <td>
-            <form action="" method="post">
-               <input type="hidden" name="cart_id" value="<?php echo $fetch_cart['id']; ?>">
-               <input type="number" min="1" name="cart_quantity" value="<?php echo $fetch_cart['quantity']; ?>">
-               <input type="submit" name="update_cart" value="Update" class="option-btn">
-            </form>
-         </td>
-         <td><?php echo $sub_total = ($fetch_cart['price'] * $fetch_cart['quantity']); ?>$</td>
-         <td><a href="inde.php?remove=<?php echo $fetch_cart['id']; ?>" class="delete-btn" onclick="return confirm('remove this product from card?);">Remove</a></td>
-      </tr>
-   <?php
-      $grand_total += $sub_total;
-         }
-      }else{
-         echo '<tr><td style="padding:20px; text-transform:capitalize;" colspan="6"> empty card/td></tr>';
-      }
-   ?>
-   <tr class="table-bottom">
-      <td colspan="4">total price:</td>
-      <td><?php echo $grand_total; ?>$</td>
-      <td><a href="inde.php?delete_all" onclick="return confirm('delete all products?');" class="delete-btn <?php echo ($grand_total > 1)?'':'disabled'; ?>">Clear Cart</a></td>
-   </tr>
-</tbody>
-</table>
 
-</div>
-<div class="profil" id="profil">
 
-</div></div></div><br>
+
+
+
 
 <div class="op">
 <div class="container-fluid mt-5 pt-5 pb-5" style="background-color: rgb(228, 220, 207);">
